@@ -400,7 +400,7 @@ void FileCopierWithProgress::CancelCopyFromServerToClientWorker(
         liCancelLength.LowPart);
 }
 
-static void AckDelete(
+void FileCopierWithProgress::AckDelete(
     _In_ CONST CF_CALLBACK_INFO* callbackInfo,
     _In_ CONST CF_CALLBACK_PARAMETERS* callbackParameters)
 {
@@ -422,7 +422,7 @@ static void AckDelete(
     wprintf(L"AckDelete isDirectory:%d, isUndelete:%d, filePath:%s, hr:%08x\n", isDirectory, isUndelete, filePath, hr);
 }
 
-static void AckRename(
+void FileCopierWithProgress::AckRename(
     _In_ CONST CF_CALLBACK_INFO* callbackInfo,
     _In_ CONST CF_CALLBACK_PARAMETERS* callbackParameters)
 {
